@@ -1,0 +1,56 @@
+package com.BussinessLogic;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+/**
+ * Servlet implementation class DispalyInfo
+ */
+@WebServlet("/DispalyInfo")
+public class DispalyInfo extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DispalyInfo() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		try {
+			//get connection
+			Connection con =DBConnection.getConnection();
+			//create sql command 
+			String str= "select * from student";
+			Statement stmt = con.createStatement();
+			//excute sql command and store output  in rsult
+			ResultSet rs=stmt.executeQuery(str);
+			PrintWriter out=response.getWriter();
+			
+			//Read record from result set
+			
+			while(rs.next()) {
+				out.println(rs.getInt("rollno")+"\t"+rs.getString("name")+"\t"+rs.getFloat("marks"));
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	
+
+}

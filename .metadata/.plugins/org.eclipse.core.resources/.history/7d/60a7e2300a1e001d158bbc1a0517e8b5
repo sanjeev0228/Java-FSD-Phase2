@@ -1,0 +1,31 @@
+package com.StudentInfo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.lang.module.Configuration;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.cj.Session;
+
+
+public class StudentDAO extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+    public StudentDAO() {
+        super();
+       
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// reading form values
+		int marks = Integer.parseInt(request.getParameter("txtmarks"));
+		String name = request.getParameter("txtName");
+		// put values in Object
+	}
+	}

@@ -1,0 +1,5 @@
+package Com.BusinessLogic;
+
+public class DatabaseConnection {
+
+}

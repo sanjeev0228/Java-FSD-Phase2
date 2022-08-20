@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+        <class name="com.StudentInfo.Student" table="Student">
+           
+            
+        
+        <id name="rollno" column="rollno">
+       <generator class="increment"/>
+        </id>
+        <property name="name" length="20"></property>
+        <property name="marks" ></property>
+        </class>   
+        
+        </hibernate-mapping>

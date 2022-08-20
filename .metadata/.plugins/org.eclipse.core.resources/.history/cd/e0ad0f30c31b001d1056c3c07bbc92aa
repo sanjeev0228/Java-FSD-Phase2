@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update</title>
+</head>
+<body>
+<form action="UpdateRecord" method="get">
+Enter RollNo : <input type="text" name ="txtrollno">
+Enter Name : <input type="text"  name="txtname">
+Enter Marks: <input type="text"  name="txtmarks">
+<input type="submit" value="Save">
+</form>
+
+</body>
+</html>
